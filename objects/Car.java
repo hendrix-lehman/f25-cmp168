@@ -12,6 +12,10 @@ class Car {
   boolean isRunning;
   boolean engineStarted;
 
+  Door carDoor; // Car has-a Door
+  //
+  private static int numberOfCars; // class variable to track number of Car instances
+
   // constructors
   // default constructor
   Car() {
@@ -23,22 +27,37 @@ class Car {
     this.speed = 0; // default speed
     this.isRunning = false; // default state
     this.engineStarted = false; // default state
+
+    // increment the class variable to track number of Car instances
+    numberOfCars++;
   }
 
   // overloaded, parameterized constructor
-  Car(String color, String model, int year, String engineType) {
+  Car(String color, String model, int year, String engineType, Door carDoor) {
     this.color = color;
     this.model = model;
     this.year = year;
     this.engineType = engineType;
+    this.carDoor = carDoor;
     this.speed = 0; // default speed
     this.isRunning = false; // default state
     this.engineStarted = false; // default state
+
+    color = "purple"; // this will not change the instance variable
+    year = 1999; // this will not change the instance variable
+    carDoor.setColor("pink"); // this will change the color of the door object passed in
+    //
+    // increment the class variable to track number of Car instances
+    numberOfCars++;
   }
 
   // getters, accessors
   public String getColor() {
     return color;
+  }
+
+  public Door getCarDoor() {
+    return carDoor;
   }
 
   public String getModel() {
@@ -65,11 +84,18 @@ class Car {
     return engineStarted;
   }
 
+  public static int getNumberOfCars() {
+    return numberOfCars;
+  }
+
   // setters, mutators
   public void setColor(String color) {
     this.color = color;
   }
 
+  public void setCarDoor(Door carDoor) {
+    this.carDoor = carDoor;
+  }
 
   // we will not allow any changes to the model, year, or engine type after creation
   // In other words, after an instance is created, these attributes are immutable
@@ -112,12 +138,12 @@ class Car {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
+  public boolean equals(Object anObj) {
+    if (this == anObj)
       return true;
-    if (obj == null || getClass() != obj.getClass())
+    if (anObj == null || getClass() != anObj.getClass())
       return false;
-    Car other = (Car) obj;
+    Car other = (Car) anObj;
     return this.year == other.year && this.speed == other.speed && this.isRunning == other.isRunning
         && this.engineStarted == other.engineStarted && this.color.equals(other.color)
         && this.model.equals(other.model) && this.engineType.equals(other.engineType);
