@@ -20,6 +20,8 @@ class App {
       mets.addPlayer(player);
     }
 
+    mets.playBall();
+
     mets.addScore(5);
     mets.winGame();
     printRecord(mets);
@@ -31,6 +33,8 @@ class App {
       Player player = new Player("Player" + i, "Position" + i, i);
       yankees.addPlayer(player);
     }
+
+    yankees.playBall();
 
     yankees.addScore(3);
     yankees.loseGame();

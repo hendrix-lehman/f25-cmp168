@@ -12,5 +12,10 @@ class Yankees extends Team {
         + standing + ", wins=" + wins + ", losses=" + losses + "]"
         + super.listPlayers();
   }
+
+  @Override
+  public void playBall() {
+    System.out.println("Yankees are playing ball!");
+  }
 }
 

@@ -29,5 +29,9 @@ class Mets extends Team {
         + super.listPlayers();
   }
 
+  @Override
+  public void playBall() {
+    System.out.println("Mets are playing ball!");
+  }
 }
 

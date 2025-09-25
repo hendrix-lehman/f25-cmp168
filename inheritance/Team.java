@@ -111,5 +111,7 @@ abstract class Team {
     System.out.println(this.name + " Record: " + this.wins + " - " + this.losses);
   }
 
+  public abstract void playBall();
+
 }
 
