@@ -15,6 +15,8 @@ class App {
     int result;
     boolean validInput = true;
 
+    // validate input using a loop
+
 //     do {
 //       if (userInput == 0) {
 //         System.out.println("The number 0 is invalid. Please use any other number.");
@@ -25,6 +27,9 @@ class App {
 //       }
 //     } while (validInput);
 
+    int number = 0;
+    System.out.println("The default value of number is: " + number); // This will cause a compile-time error
+
     try {
       result = mg.divide(10, userInput);
       System.out.println("Result: " + result);
@@ -32,8 +37,14 @@ class App {
       System.out.println("The number 0 is invalid. Please use any other number.");
       System.out.println(e.getMessage());
     } catch (UnsupportedOperationException e) {
-      System.out.println("An IO error occurred.");
+      System.out.println("Unsupported Operation.");
       System.out.println(e.getMessage());
+    } catch (NoDivisionByOneException e) {
+      System.out.println("Division by one is not allowed. Please use any other number.");
+      System.out.println(e.getMessage());
+    } finally {
+      System.out.println("Thank you for using the division program.");
+      scanner.close();
     }
 
 
