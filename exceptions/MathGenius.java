@@ -7,7 +7,7 @@ class MathGenius {
     printHello();
   }
 
-  public int divide(int a, int b) throws ArithmeticException, NoDivisionByOneException {
+  public int divide(int a, int b) throws NoDivisionByOneException {
     if (b == 1) {
       throw new NoDivisionByOneException();
     }
