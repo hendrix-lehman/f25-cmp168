@@ -13,21 +13,26 @@ class App {
     // int number = scanner.nextInt();
     // System.out.println("You entered: " + number);
 
-    String filePath = File.separatorChar + "home/hendrix/lehman/f25-cmp168/file_io/";
+    // String filePath = File.separatorChar + "home/hendrix/lehman/f25-cmp168/file_io/";
+    String filePath = "."; 
     System.out.println("File path: " + filePath);
 
     File file = new File(filePath);
 
     if (file.isDirectory()) {
       System.out.println("It's a directory.");
-      String[] files = file.list();
-      for (String f : files) {
+      File[] files = file.listFiles();
+      for (File f : files) {
         // System.out.print(f);
-        if (new File(f).isDirectory()) {
-          System.out.println("(dir) " + f);
+        if (f.isDirectory()) {
+          System.out.println("(dir) " + f.getCanonicalPath());
         } else {
-          System.out.println("(file) " + f);
+          System.out.println("(file) " + f.getCanonicalPath());
         }
+        // if(f.getName().endsWith(".txt")) {
+          // f.setWritable(false);
+          // System.out.println("Set " + f.getName() + " to read-only.");
+        // }
       }
     } else if (file.isFile()) {
       System.out.println("It's a file.");
