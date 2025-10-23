@@ -14,7 +14,7 @@ class App {
     // System.out.println("You entered: " + number);
 
     // String filePath = File.separatorChar + "home/hendrix/lehman/f25-cmp168/file_io/";
-    String filePath = "."; 
+    String filePath = "."; // current directory 
     System.out.println("File path: " + filePath);
 
     File file = new File(filePath);
