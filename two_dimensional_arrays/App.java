@@ -32,6 +32,8 @@ class App {
     bingo[0][3] = 51;
     bingo[0][4] = 66;
 
+    System.out.println("Bingo card first row, third column: " + bingo[0][2]);
+
     // bingo card row 2
     bingo[1][0] = 3;
     bingo[1][1] = 27;
