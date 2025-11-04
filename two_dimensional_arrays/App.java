@@ -2,6 +2,16 @@
 //
 class App {
 
+
+  public static void displayTwoDimensionalArray(int[][] array) {
+    for (int i = 0; i < array.length; i++) {
+      for (int j = 0; j < array[i].length; j++) {
+        System.out.print(array[i][j] + "\t");
+      }
+      System.out.println();
+    }
+  }
+
   public static void main(String[] args) {
    
     // number types
@@ -61,6 +71,8 @@ class App {
     bingo[4][2] = 41;
     bingo[4][3] = 48;
     bingo[4][4] = 73;
+
+    displayTwoDimensionalArray(bingo);
 
 
   }
