@@ -1,5 +1,3 @@
-// add package name here if needed
-//
 import javax.swing.JFrame;
 
 class App {
@@ -11,7 +9,8 @@ class App {
     // BoxLayoutPanel panel = new BoxLayoutPanel(BoxLayout.LINE_AXIS);
     // CardLayoutPanel panel = new CardLayoutPanel();
     // FlowLayoutPanel panel = new FlowLayoutPanel();
-    GridLayoutPanel panel = new GridLayoutPanel();
+    // GridLayoutPanel panel = new GridLayoutPanel();
+    GridBagLayoutPanel panel = new GridBagLayoutPanel();
 
     frame.add(panel);
     
